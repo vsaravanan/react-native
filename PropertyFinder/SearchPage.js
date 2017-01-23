@@ -126,13 +126,14 @@ class SearchPage extends Component {
 				onPress={this.onSearchPressed.bind(this)} >
 			<Text style={styles.buttonText}>Go</Text>
 		  </TouchableHighlight>
-		</View>
 		<TouchableHighlight style={styles.button}
 			underlayColor='#99d9f4' 
 			onPress={this.onLocationPressed.bind(this)} >
-		  <Text style={styles.buttonText}>Location</Text>
+	   	        <Text style={styles.buttonText}>Location</Text>
 		  
-		</TouchableHighlight>		
+		</TouchableHighlight>		  
+		</View>
+		
 		<Image source={require('./Resources/house.png')} style={styles.image}/>	
 		<Text style={styles.description}>{this.state.message}</Text>		
       </View>
