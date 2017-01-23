@@ -130,6 +130,7 @@ class SearchPage extends Component {
 		<TouchableHighlight style={styles.button}
 			underlayColor='#99d9f4'>
 		  <Text style={styles.buttonText}>Location</Text>
+		  onPress={this.onLocationPressed.bind(this)}
 		</TouchableHighlight>		
 		<Image source={require('./Resources/house.png')} style={styles.image}/>	
 		<Text style={styles.description}>{this.state.message}</Text>		
@@ -168,6 +169,21 @@ class SearchPage extends Component {
 		this.setState({ message: 'Location not recognized; please try again.'});
 	  }
 	}  
+
+	onLocationPressed() {
+	  navigator.geolocation.getCurrentPosition(
+		location => {
+		  var search = location.coords.latitude + ',' + location.coords.longitude;
+		  this.setState({ searchString: search });
+		  var query = urlForQueryAndPage('centre_point', search, 1);
+		  this._executeQuery(query);
+		},
+		error => {
+		  this.setState({
+			message: 'There was a problem with obtaining your location: ' + error
+		  });
+		});
+	}
 }
 
 
