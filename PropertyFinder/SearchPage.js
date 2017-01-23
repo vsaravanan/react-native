@@ -100,7 +100,7 @@ class SearchPage extends Component {
 	  console.log(this.state.searchString);
 	}
 	
-  render() {
+ render() {
 	  
 	var spinner = this.state.isLoading ?
 	  ( <ActivityIndicator
@@ -127,17 +127,21 @@ class SearchPage extends Component {
 			<Text style={styles.buttonText}>Go</Text>
 		  </TouchableHighlight>
 		</View>
+		<View style={styles.flowRight}>
 		<TouchableHighlight style={styles.button}
 			underlayColor='#99d9f4' 
 			onPress={this.onLocationPressed.bind(this)} >
 		  <Text style={styles.buttonText}>Location</Text>
-		  
 		</TouchableHighlight>		
+		</View>
+
 		<Image source={require('./Resources/house.png')} style={styles.image}/>	
 		<Text style={styles.description}>{this.state.message}</Text>		
       </View>
     );
   }
+   
+	
   
 	_executeQuery(query) {
 	  console.log(query);
