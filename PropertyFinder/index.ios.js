@@ -1,25 +1,10 @@
 'use strict';
  
-import React, { Component } from 'react'
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  TouchableHighlight,
-  ActivityIndicator,
-  Image
-} from 'react-native';
+var React = require('react');
+var ReactNative = require('react-native');
 
 var SearchPage = require('./SearchPage');
 
-
-	class HelloWorld extends React.Component {
-	  render() {
-		 return React.createElement(ReactNative.Text, {style: styles.text}, "Hello World!");
-		//  return <ReactNative.Text style={styles.text}>Hello World (Again)</ReactNative.Text>;
-	  }
-	}
 
 	class PropertyFinderApp extends React.Component {
 	  render() {
@@ -28,7 +13,7 @@ var SearchPage = require('./SearchPage');
 			style={styles.container}
 			initialRoute={{
 			  title: 'Property Finder',
-			  component: SearchPage,
+			  component: SearchPage
 			}}/>
 		);
 	  }
@@ -50,4 +35,4 @@ var SearchPage = require('./SearchPage');
 
 
 ReactNative.AppRegistry.registerComponent('PropertyFinder', function() { return PropertyFinderApp });
-
+var SearchPage = require('./SearchPage');
